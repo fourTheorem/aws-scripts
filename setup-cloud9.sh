@@ -7,6 +7,7 @@ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip
 unzip -q awscliv2.zip
 sudo ./aws/install
 rm awscliv2.zip
+export PATH=~/.local/bin:$PATH
 
 # Install newer version of AWS SAM CLI
 wget -q https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
