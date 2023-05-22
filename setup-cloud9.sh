@@ -1,3 +1,6 @@
+#!/bin/bash
+set -euo pipefail
+
 ## go to tmp directory
 cd /tmp
 
