@@ -16,4 +16,9 @@ sudo ./sam-installation/install --update
 rm -rf ./sam-installation/
 rm ./aws-sam-cli-linux-x86_64.zip
 
+## Install additional dependencies
+sudo yum install -y jq
+
+## Resize disk
+/home/ec2-user/environment/aws-scripts/resize-cloud9.sh 20
 
