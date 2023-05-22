@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
+export HOME=/home/ec2-user
+
 ## go to tmp directory
 cd /tmp
 
@@ -19,6 +21,8 @@ sudo ./sam-installation/install --update
 rm -rf ./sam-installation/
 rm ./aws-sam-cli-linux-x86_64.zip
 
+## Install additional dependencies
+sudo yum install -y jq
 
 ## Resize disk
 cd /home/ec2-user/environment/aws-scripts
@@ -49,5 +53,4 @@ echo 'PATH=/home/linuxbrew/.linuxbrew/opt/python@3.10/libexec/bin:$PATH' >> ~/.b
 # Install poetry
 curl -sSL https://install.python-poetry.org | python3.10 -
 
-## Install additional dependencies
-sudo yum install -y jq
+
