@@ -26,6 +26,7 @@ chmod +x resize.sh
 # Update sudo config to enable sudo check in homebrew
 # https://github.com/Homebrew/install/issues/369
 # https://askubuntu.com/questions/1195249/sudo-validate-sudo-v-asks-for-password-even-with-nopasswd/1211226
+cd /home/ec2-user/environment/
 echo "Defaults verifypw = any" | sudo tee /etc/sudoers.d/100-linuxbrew-install
 
 # Install homebrew
