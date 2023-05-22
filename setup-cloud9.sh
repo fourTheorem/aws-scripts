@@ -20,5 +20,6 @@ rm ./aws-sam-cli-linux-x86_64.zip
 sudo yum install -y jq
 
 ## Resize disk
-/home/ec2-user/environment/aws-scripts/resize.sh 20
-
+cd /home/ec2-user/environment/aws-scripts
+chmod +x resize.sh
+./resize.sh 20
