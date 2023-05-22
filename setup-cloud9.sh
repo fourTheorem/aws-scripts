@@ -17,7 +17,12 @@ rm -rf ./sam-installation/
 rm ./aws-sam-cli-linux-x86_64.zip
 
 
-# Install Python 3.10
+## Resize disk
+cd /home/ec2-user/environment/aws-scripts
+chmod +x resize.sh
+./resize.sh 20
+
+## Install python 3.10
 # Update sudo config to enable sudo check in homebrew
 # https://github.com/Homebrew/install/issues/369
 # https://askubuntu.com/questions/1195249/sudo-validate-sudo-v-asks-for-password-even-with-nopasswd/1211226
@@ -32,13 +37,9 @@ brew install python@3.10 jq awscli aws-sam-cli
 # Force python 3.10 to top of PATH
 echo 'PATH=/home/linuxbrew/.linuxbrew/opt/python@3.10/libexec/bin:$PATH' >> ~/.bash_profile
 . ~/.bash_profile
+
 # Install poetry
 curl -sSL https://install.python-poetry.org | python3.10 -
 
 ## Install additional dependencies
 sudo yum install -y jq
-
-## Resize disk
-cd /home/ec2-user/environment/aws-scripts
-chmod +x resize.sh
-./resize.sh 20
