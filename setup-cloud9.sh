@@ -27,4 +27,8 @@ cd /home/ec2-user/environment/aws-scripts
 chmod +x resize.sh
 ./resize.sh 20
 
+## Install Python 3.10
+chmod +x setup-cloud9-runshellscript.sh
+./setup-cloud9-runshellscript.sh
+
 
